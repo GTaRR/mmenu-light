@@ -63,6 +63,7 @@ export default class MmOffCanvasDrawer {
     open() {
         this.wrapper.classList.add(`${prefix}--open`);
         document.body.classList.add(`${prefix}-opened`);
+        document.body.dispatchEvent(new Event('mm:open'))
     }
 
     /**
@@ -71,5 +72,6 @@ export default class MmOffCanvasDrawer {
     close() {
         this.wrapper.classList.remove(`${prefix}--open`);
         document.body.classList.remove(`${prefix}-opened`);
+        document.body.dispatchEvent(new Event('mm:close'))
     }
 }
